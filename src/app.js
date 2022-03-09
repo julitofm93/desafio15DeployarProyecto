@@ -38,10 +38,10 @@ const server = app.listen(PORT,()=>console.log(`Listen on ${PORT}`))
 
 const baseSession = (session({
     store:MongoStore.create({
-        mongoUrl:"mongodb+srv://Julito:123@prueba.e1gkm.mongodb.net/sessions?retryWrites=true&w=majority",ttl:20}),
+        mongoUrl:process.env.MONGO_URL_SESSIONS,ttl:20}),
     resave:false,
     saveUninitialized:false,
-    secret:"CoderChat",
+    secret:process.env.SECRET,
     cookie:{maxAge:20000}
 }))
  
