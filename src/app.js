@@ -17,17 +17,14 @@ dotenv.config()
 
 const app = express();
 
-const minimizedArgs = minimist(process.argv)
+/* const minimizedArgs = minimist(process.argv)
 
 export let port = minimizedArgs.port || 8080
-
-const server = app.listen(port, ()=>{
-    console.log(`Servidor pid: ${process.pid} escuchando en ${port} `)
-})
+ */
 
 
-const PORT = process.env.PORT || 8080;
-
+const PORT = process.env.PORT||8080;
+const server = app.listen(PORT,()=>console.log(`Listen on ${PORT}`))
 /* const baseSession = (session({
     store:MongoStore.create({
     mongoUrl: process.env.MONGO_URL_SESSIONS,
